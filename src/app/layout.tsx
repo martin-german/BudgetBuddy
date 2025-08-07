@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
+import { LanguageProvider } from "./context/LanguageContext";
 
-const inter = Inter( { subsets: ["latin"]}); 
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "BudgetBuddy",
   description: "expenses counter application",
 };
 
-const poppins = Poppins ( { 
+const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export default function RootLayout({
@@ -24,10 +25,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body  className={`${poppins.variable}`}>
-        <AppRouterCacheProvider options={{ key: 'css' }}>
-        {children}
-        </AppRouterCacheProvider>
+      <body className={`${poppins.variable}`}>
+        <LanguageProvider>
+          <AppRouterCacheProvider options={{ key: "css" }}>
+            {children}
+          </AppRouterCacheProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

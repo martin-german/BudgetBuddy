@@ -1,0 +1,10 @@
+{
+  "header": {
+    "search": "Search an expense...",
+    "button": "New Expense"
+  },
+    "subheader":{
+    "walletOptions": "Home Wallett",
+    "clearBtn": "Clear all"
+  }
+}

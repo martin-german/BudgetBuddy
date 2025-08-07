@@ -1,7 +1,10 @@
+'use client';
+
 import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
+import { useLanguage } from "../context/LanguageContext";
 
 function Header() {
   return (
@@ -21,8 +24,9 @@ function Header() {
 export default Header;
 
 function LogoSection() {
+
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-2 items-center ">
       {/*Icon container */}
       <div className="bg-teal-500 flex items-center justify-center p-[11px] rounded-lg">
         {/*Piggy Icon*/}
@@ -45,7 +49,7 @@ function LogoSection() {
 }
 
 function SearchBar() {
-
+    const { t } = useLanguage();
   return (
     <div
       className="h-[46px] bg-slate-100 flex items-center text-sm 
@@ -55,7 +59,7 @@ function SearchBar() {
       </div>
       <input
         type="text"
-        placeholder="Search an expense..."
+        placeholder={t.header.search}
         className="bg-transparent outline-none w-full font-light"
       />
     </div>
@@ -63,6 +67,7 @@ function SearchBar() {
 }
 
 function Button() {
+  const { t } = useLanguage();
   return (
     <button
       className="gap-1 p-[12px] flex text-sm rounded-md 
@@ -70,7 +75,7 @@ function Button() {
     items-center justify-center pr-[18px] 
     ">
       <AddOutlinedIcon sx={{ fontSize: "20px" }} />
-      <span className="">New Expense</span>
+      <span>{t.header.button}</span>
     </button>
   );
 }

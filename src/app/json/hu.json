@@ -1,0 +1,10 @@
+{
+  "header": {
+    "search": "Keresés egy kiadásra...",
+    "button": "Új kiadás"
+  },
+  "subheader":{
+    "walletOptions": "Otthon tárca",
+    "clearBtn": "Összes törlés"
+  }
+}
