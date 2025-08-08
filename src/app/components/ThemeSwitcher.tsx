@@ -1,35 +1,33 @@
 "use client";
 
-import { useTheme } from "../hooks/useTheme";
+import  useTheme from "../hooks/useTheme";
 
-import LightModeIcon from '@mui/icons-material/LightMode';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 
-const ThemeSwitcher = () => {
-  const { theme, toggleTheme } = useTheme();
+type ThemeSwitcherProps = {
+  toggleTheme: () => void;
+};
+
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({toggleTheme}) => {
+  const { theme } = useTheme();
 
   return (
-    <button
-      onClick={toggleTheme}
-      value={theme}
-      aria-label="Toggle theme"
-      style={{
-        background: "none",
-        border: "none",
-        cursor: "pointer",
-        padding: "0.5rem",
-        borderRadius: "50%",
-        transition: "background 0.3s ease",
-      }}
-      title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-    >
-      {theme === "light" ? (
-        <DarkModeIcon className="bg-transparent rounded-full hover:text-white"/>
-      ) : (
-        <LightModeIcon className="bg-transparent rounded-full hover:text-"/>
-      )}
-    </button>
+    <div className="flex items-center right-1">
+      <button
+        onClick={toggleTheme}
+        
+        value={theme}
+        aria-label="Toggle theme"
+        title={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
+        {theme === "light" ? (
+          <DarkModeIcon className="bg-transparent rounded-full hover:text-white" />
+        ) : (
+          <LightModeIcon className="bg-transparent rounded-full hover:text-white" />
+        )}
+      </button>
+    </div>
   );
-}
+};
 
 export default ThemeSwitcher;

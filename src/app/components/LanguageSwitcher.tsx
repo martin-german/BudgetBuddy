@@ -6,7 +6,7 @@ const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center justify-center gap-1">
+    <div className="flex justify-end items-center ">
       <LanguageIcon sx={{ fontSize: "30px" }} className="text-black " />
 
       <select
