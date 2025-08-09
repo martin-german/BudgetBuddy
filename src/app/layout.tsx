@@ -4,7 +4,7 @@ import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 import { LanguageProvider } from "./context/LanguageContext";
-
+import { ThemeProvider } from "./context/ThemeContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,11 +26,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable}`}>
+        <ThemeProvider>
         <LanguageProvider>
           <AppRouterCacheProvider options={{ key: "css" }}>
             {children}
           </AppRouterCacheProvider>
         </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
 
   useLayoutEffect(() => {
     const savedLang = localStorage.getItem('lang') as Language;
-   setLanguage(savedLang || 'en');
+   setLanguage(savedLang || "en");
   }, []);
 
   const handleSetLanguage = (lang: Language) => {

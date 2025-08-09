@@ -1,4 +1,5 @@
 export type  Language = 'en' | 'hu';
+export type Theme = 'light' | 'dark';
 
 export type Translations = {
   header: {
@@ -10,7 +11,7 @@ export type Translations = {
     clearBtn: string;
   };
   
- // Később :
+ // Later :
   // footer?: {
   //   copyright: string;
   // };
@@ -20,4 +21,3 @@ export type Translations = {
   // };
 };
 
-export type Theme = 'light' | 'dark';

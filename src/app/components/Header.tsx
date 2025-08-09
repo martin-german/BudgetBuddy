@@ -37,7 +37,7 @@ function LogoSection() {
           />
         </div>
       </div>
-
+      {/*Brand name*/}
       <div className="flex gap-1 text-[24px]">
         <h1 className="text-4xl font-black text-black">
           Budget
@@ -47,6 +47,7 @@ function LogoSection() {
     </div>
   );
 }
+
 
 function SearchBar() {
     const { t } = useLanguage();
@@ -66,6 +67,7 @@ function SearchBar() {
   );
 }
 
+//Add new expense btn
 function Button() {
   const { t } = useLanguage();
   return (
