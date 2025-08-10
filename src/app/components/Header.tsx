@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -8,23 +8,29 @@ import { useLanguage } from "../context/LanguageContext";
 
 function Header() {
   return (
-    <nav className="flex justify-between items-center">
-      {/*Logo Section*/}
-      <LogoSection />
+    <div className="">
+      <div className="flex flex-col items-center ">
+        {/*Brand name*/}
+        <h1 className="text-4xl font-black text-black pb-4">
+          Budget
+          <span className="font-thin text-zinc-900">Buddy</span>
+        </h1>
+      </div>
+      <div className="flex w-auto justify-between items-center">
+        {/*Logo Section*/}
+        <LogoSection />
 
-      {/*Search Bar*/}
-      <SearchBar />
+        {/*Search Bar*/}
+        <SearchBar />
 
-      {/*Button */}
-      <Button />
-    </nav>
+        {/*Button */}
+        <Button />
+      </div>
+    </div>
   );
 }
 
-export default Header;
-
 function LogoSection() {
-
   return (
     <div className="flex gap-2 items-center ">
       {/*Icon container */}
@@ -37,31 +43,23 @@ function LogoSection() {
           />
         </div>
       </div>
-      {/*Brand name*/}
-      <div className="flex gap-1 text-[24px]">
-        <h1 className="text-4xl font-black text-black">
-          Budget
-          <span className="font-thin text-zinc-900">Buddy</span>
-        </h1>
-      </div>
     </div>
   );
 }
 
-
 function SearchBar() {
-    const { t } = useLanguage();
+  const { t } = useLanguage();
   return (
     <div
-      className="h-[46px] bg-slate-100 flex items-center text-sm 
-    rounded-md pl-3 gap-1 w-[300px]">
+      className="h-12 bg-slate-100 flex items-center text-sm 
+    rounded-md pl-3 gap-2 w-[420px] max-sm:w-[120px]">
       <div>
         <SearchOutlinedIcon className="text-black" />
       </div>
       <input
         type="text"
         placeholder={t.header.search}
-        className="bg-transparent outline-none w-full font-light"
+        className="bg-transparent max-sm:w-[50px] outline-none w-full font-light"
       />
     </div>
   );
@@ -72,12 +70,14 @@ function Button() {
   const { t } = useLanguage();
   return (
     <button
-      className="gap-1 p-[12px] flex text-sm rounded-md 
-    font-black text-black bg-transparent border border-black hover:bg-teal-500 
-    items-center justify-center pr-[18px] 
+      className="gap-1 p-[13px] flex text-sm rounded-md 
+     text-slate-50 bg-teal-600 border border-black hover:bg-teal-700 
+    items-center justify-center pr-[18px] max-sm:pr-3 max-md:pr-3
     ">
       <AddOutlinedIcon sx={{ fontSize: "20px" }} />
-      <span>{t.header.button}</span>
+      <span className="max-sm:hidden max-md:hidden">{t.header.button}</span>
     </button>
   );
 }
+
+export default Header;

@@ -9,7 +9,7 @@ import { useLanguage } from "../context/LanguageContext";
 
 function Subheader() {
   return (
-    <div className="mt-[90px] flex justify-between">
+    <div className="mt-[90px] mt:sm-[10px] mt:md-[10px] flex justify-between">
       <WalletOptions />
       <ClearAllBtn />
     </div>
@@ -35,10 +35,11 @@ function WalletOptions() {
 function ClearAllBtn() {
    const { t } = useLanguage();
   return (
-    <button className="border border-black transition-all text-gray-900 px-6 hover:bg-teal-500 flex
+    <button className="border border-black transition-all text-slate-50 px-6 
+    bg-teal-600 hover:bg-teal-700 flex
     text-sm rounded-md items-center justify-center
     ">
-      <span className="max-md:hidden">{t.subheader.clearBtn}</span>
+      <span className="">{t.subheader.clearBtn}</span>
     </button>
   );
 }

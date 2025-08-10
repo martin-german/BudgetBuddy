@@ -22,3 +22,13 @@
 .poppins {
   font-family: var(--font-poppins);
 }
+
+/* In your global CSS file */
+.scrollbar-custom{
+  @apply overflow-y-auto; 
+
+  /* Webkit */
+  scrollbar-width: thin;
+  scrollbar-color: #007C72 #E7E5E4; 
+}
+
