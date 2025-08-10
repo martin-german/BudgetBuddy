@@ -1,4 +1,5 @@
 import SingleExpense from "./SingleExpense";
+import { useLanguageContext } from "../context/LanguageContext";
 
 function AllExpenses() {
   return (
@@ -11,18 +12,19 @@ function AllExpenses() {
 }
 
 function ListHeader() {
+  const { t }  = useLanguageContext();
   return (
     <div className="flex justify-between mb-4 items-center px-1">
       <div>
         {/* Date */}
-        <span className="font-bold text-[15px] text-slate-700">
+        <span className="font-bold text-[15px]">
           August 22th 2024
         </span>
       </div>
 
-      <div className="flex gap-7 text-slate-400 text-[13px] font-semibold">
-        <span>Number of transaction: 03</span>
-        <span>Value: $2100</span>
+      <div className="flex gap-7 text-[13px] font-semibold">
+        <span>{t.allExpenses.transactions}: 3 </span>
+        <span>{t.allExpenses.value}: $2100</span>
       </div>
     </div>
   );

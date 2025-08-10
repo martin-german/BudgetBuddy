@@ -4,9 +4,10 @@ import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguageContext } from "../context/LanguageContext";
+import { useAppContext } from "../context/AppContext";
 
-function Header() {
+export function Header() {
   return (
     <div className="">
       <div className="flex flex-col items-center ">
@@ -48,7 +49,7 @@ function LogoSection() {
 }
 
 function SearchBar() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
   return (
     <div
       className="h-12 bg-slate-100 flex items-center text-sm 
@@ -67,9 +68,14 @@ function SearchBar() {
 
 //Add new expense btn
 function Button() {
-  const { t } = useLanguage();
+  const { t } = useLanguageContext();
+  const {
+        openExpenseDialogObject: { openExpenseDialog, setOpenExpenseDialog},
+  } = useAppContext();
+
   return (
     <button
+    onClick={() => setOpenExpenseDialog(true)}
       className="gap-1 p-[13px] flex text-sm rounded-md 
      text-slate-50 bg-teal-600 border border-black hover:bg-teal-700 
     items-center justify-center pr-[18px] max-sm:pr-3 max-md:pr-3
@@ -80,4 +86,3 @@ function Button() {
   );
 }
 
-export default Header;

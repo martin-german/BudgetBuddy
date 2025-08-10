@@ -1,13 +1,13 @@
-'use client'
+"use client"
 
 import React from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 
-import { useLanguage } from "../context/LanguageContext";
+import { useLanguageContext } from "../context/LanguageContext";
 
 
-function Subheader() {
+export function Subheader() {
   return (
     <div className="mt-[90px] mt:sm-[10px] mt:md-[10px] flex justify-between">
       <WalletOptions />
@@ -16,10 +16,9 @@ function Subheader() {
   );
 }
 
-export default Subheader;
 
 function WalletOptions() {
-   const { t } = useLanguage();
+   const { t } = useLanguageContext();
   return (
     <div className="border p-2 rounded-md flex items-center gap-2 cursor-pointer">
       <HomeOutlinedIcon className="text-black rounded-full" sx={{ fontSize: "25px" }} />
@@ -33,7 +32,7 @@ function WalletOptions() {
 }
 
 function ClearAllBtn() {
-   const { t } = useLanguage();
+   const { t } = useLanguageContext();
   return (
     <button className="border border-black transition-all text-slate-50 px-6 
     bg-teal-600 hover:bg-teal-700 flex

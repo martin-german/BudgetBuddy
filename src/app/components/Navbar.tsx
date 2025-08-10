@@ -12,7 +12,6 @@ function Navbar() {
       <div className="flex justify-center">
         <LanguageSwitcher />
       </div>
-
       {/* Right section: Theme Switcher */}
       <div className="flex justify-end">
         <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />

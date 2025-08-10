@@ -1,10 +1,35 @@
 {
+  "theme": {
+    "dark": "SÖTÉT TÉMA",
+    "light": "VILÁGOS TÉMA"
+  },
   "header": {
-    "search": "Keresés egy kiadásra...",
+    "search": "Kiadás keresése...",
     "button": "Új kiadás"
   },
-  "subheader":{
-    "walletOptions": "Otthon tárca",
+  "subheader": {
+    "walletOptions": "Otthoni tárca",
     "clearBtn": "Összes törlés"
+  },
+  "expenseDialog": {
+    "addExpense": "Új kiadás",
+    "expenseName": "Kiadás megnevezése",
+    "addInput": "Add meg a kiadás nevét...",
+    "error": "Valami hiba történt...",
+    "amount": "Összeg",
+    "amountInput": "Add meg az összeget...",
+    "walletName": "Pénztárca",
+    "selectWallets": "Otthoni tárca",
+    "cancelBtn": "Bezárás",
+    "addBtn": "Hozzáadás"
+  },
+  "allExpenses": {
+    "date": "",
+    "transactions": "Tranzakciók száma",
+    "value": "Összesen"
+  },
+  "singleExpense": {
+    "expanseName": "Költség megnevezése",
+    "description": "Tárca"
   }
 }

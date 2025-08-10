@@ -5,7 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
-const inter = Inter({ subsets: ["latin"] });
+import { AppProvider } from "./context/AppContext";
 
 export const metadata: Metadata = {
   title: "BudgetBuddy",
@@ -27,11 +27,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable}`}>
         <ThemeProvider>
-        <LanguageProvider>
-          <AppRouterCacheProvider options={{ key: "css" }}>
-            {children}
-          </AppRouterCacheProvider>
-        </LanguageProvider>
+          <LanguageProvider>
+            <AppProvider>
+              <AppRouterCacheProvider options={{ key: "css" }}>
+                {children}
+              </AppRouterCacheProvider>
+            </AppProvider>
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

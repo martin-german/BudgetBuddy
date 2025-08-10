@@ -1,10 +1,35 @@
 {
+  "theme": {
+    "dark": "DARK THEME",
+    "light": "LIGHT THEME"
+  },
   "header": {
     "search": "Search an expense...",
     "button": "New Expense"
   },
-    "subheader":{
-    "walletOptions": "Home Wallett",
+  "subheader": {
+    "walletOptions": "Home Wallet",
     "clearBtn": "Clear all"
+  },
+  "expenseDialog": {
+    "addExpense": "Add Expense",
+    "expenseName": "Expense Name",
+    "addInput": "Enter Expense Name...",
+    "error": "Something is wrong...",
+    "amount": "Amount",
+    "amountInput": "Enter The Amount...",
+    "walletName": "Wallet",
+    "selectWallets": "HomeWallet",
+    "cancelBtn": "Cancel",
+    "addBtn": "Add Expense"
+  },
+  "allExpenses": {
+    "date": "",
+    "transactions": "Number of transaction",
+    "value": "Value"
+  },
+  "singleExpense": {
+    "expanseName": "Expense Name",
+    "description": "Wallet"
   }
 }
