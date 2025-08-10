@@ -27,18 +27,12 @@ export type Translations = {
     addBtn: string;
   };
 
-  expenses: {
-    transactions: string;
-    value: string;
-    dateFormat: string;
-  };
   singleExpense:{
     expanseName:string;
     description:string;
   };
 
   allExpenses:{
-    date:Date;
     transactions: string;
     value: string;
   };
