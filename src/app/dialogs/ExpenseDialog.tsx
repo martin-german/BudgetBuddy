@@ -169,14 +169,14 @@ function DialogFooter() {
       {/* Cancel btn */}
       <button
         onClick={() => setOpenExpenseDialog(false)}
-        className="border border-slate-200 text-black
-            text-[13px] p-2 px-6 rounded-md bg-red-200 hover:bg-red-300 hover:border-slate-300 transition-all">
+        className="border text-black border-black
+            text-[13px] p-2 px-6 rounded-md bg-red-200 hover:bg-red-300 hover:border-slate-600 transition-all">
         {t.expenseDialog.cancelBtn}
       </button>
 
       <button
-        className="bg-teal-600 hover:bg-teal-700
-            text-white text-[13px] p-2 px-3 rounded-md transition-all">
+        className="bg-teal-600 hover:bg-teal-700 border border-black hover:border-slate-600
+            text-black text-[13px] p-2 px-3 rounded-md transition-all">
         {t.expenseDialog.addBtn}
       </button>
     </div>

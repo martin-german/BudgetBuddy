@@ -26,7 +26,7 @@ function Home() {
         </div>
       </div>
       <div className="text-center">
-        <h1 className="text-red-200 justify-between font-bold uppercase">Work still in progress <br/> last update: 8/10/2025 </h1>
+        <h1 className="text-red-200 justify-between font-bold uppercase">Work in progress <br/> last update: 8/12/2025 </h1>
       </div>
       <ExpenseDialog/>
       {openExpenseDialog &&(
