@@ -32,7 +32,7 @@ function Home() {
       </div>
       
       <div className="text-center">
-        <h1 className="text-red-200 justify-between font-bold uppercase">Work in progress <br/> last update: 8/12/2025 </h1>
+        <h1 className="text-red-200 justify-between font-bold uppercase">Work in progress <br/> last update: 8/14/2025 7:45 PM </h1>
       </div>
       <ExpenseDialog/>
       <IconsWindow/>
