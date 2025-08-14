@@ -3,14 +3,17 @@
     "dark": "DARK THEME",
     "light": "LIGHT THEME"
   },
+
   "header": {
     "search": "Search an expense...",
     "button": "New Expense"
   },
+
   "subheader": {
     "walletOptions": "Home Wallet",
     "clearBtn": "Clear all"
   },
+
   "expenseDialog": {
     "addExpense": "Add Expense",
     "expenseName": "Expense Name",
@@ -23,13 +26,26 @@
     "cancelBtn": "Cancel",
     "addBtn": "Add Expense"
   },
+
+  "iconsDialog": {
+    "headerName": "All Icons",
+    "iconsDescription": "Please select the icons you'd like to use from the collection below: ",
+    "iconSaveBtn": "Save",
+    "iconCancelBtn": "Cancel"
+  },
+
   "allExpenses": {
     "date": "",
     "transactions": "Number of transaction",
     "value": "Value"
   },
+  
   "singleExpense": {
     "expanseName": "Expense Name",
     "description": "Wallet"
+  },
+
+  "footer":{
+    "allRights": "All rights reserved"
   }
 }

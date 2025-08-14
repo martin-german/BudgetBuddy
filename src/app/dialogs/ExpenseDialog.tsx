@@ -19,7 +19,7 @@ export function ExpenseDialog() {
   return (
     <div
       className={`${openExpenseDialog ? "block" : "hidden"}
-            w-[45%] max-sm:w-[80%] z-50 p-3 left-1/2 top-[48%] -translate-y-1/2
+            w-[45%] max-sm:w-[85%] z-50 p-3 left-1/2 top-[50%] -translate-y-1/2
             -translate-x-1/2 absolute flex flex-col gap-3 border border-slate-50
             ${theme === "dark" ? "bg-slate-400": "bg-white"} rounded-md shadow-md `}>
       {/* Header */}

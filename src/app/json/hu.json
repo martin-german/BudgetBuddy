@@ -3,14 +3,17 @@
     "dark": "SÖTÉT TÉMA",
     "light": "VILÁGOS TÉMA"
   },
+
   "header": {
     "search": "Kiadás keresése...",
     "button": "Új kiadás"
   },
+
   "subheader": {
     "walletOptions": "Otthoni tárca",
     "clearBtn": "Összes törlés"
   },
+
   "expenseDialog": {
     "addExpense": "Új kiadás",
     "expenseName": "Kiadás megnevezése",
@@ -23,13 +26,25 @@
     "cancelBtn": "Bezárás",
     "addBtn": "Hozzáadás"
   },
+
+  "iconsDialog": {
+    "headerName": "Összes ikon",
+    "iconsDescription": "Kérjük, válassza ki a használni kívánt ikonokat az alábbi gyűjteményből: ",
+    "iconCancelBtn": "Bezárás",
+    "iconSaveBtn": "Hozzáadás"
+  },
+
   "allExpenses": {
     "date": "",
     "transactions": "Tranzakciók száma",
     "value": "Összesen"
   },
+
   "singleExpense": {
     "expanseName": "Költség megnevezése",
     "description": "Tárca"
+  },
+    "footer":{
+    "allRights": "Minden jog fenntartva"
   }
 }

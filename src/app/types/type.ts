@@ -1,5 +1,7 @@
 export type  Language = 'en' | 'hu';
+
 export type Theme = 'light' | 'dark';
+
 export type IconData = {
     id: number;
     name: string;
@@ -33,6 +35,12 @@ export type Translations = {
     addBtn: string;
   };
 
+  iconsDialog:{
+    headerName:string;
+    iconsDescription:string;
+    iconSaveBtn: string;
+    iconCancelBtn:string;
+  };
   singleExpense:{
     expanseName:string;
     description:string;
@@ -42,6 +50,10 @@ export type Translations = {
     transactions: string;
     value: string;
   };
+
+  footer:{
+    allRights: string;
+  }
   
  // Later :
   // footer?: {

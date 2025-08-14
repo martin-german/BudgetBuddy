@@ -719,7 +719,7 @@ export default function AllIcons() {
         <div
           key={index}
           className={`w-9 h-9 shadow-sm border border-slate-50 flex items-center
-                    justify-center rounded-lg hover:bg-teal-600 hover:text-black
+                    justify-center rounded-lg hover:bg-teal-600 hover:text-black 
                     ${
                       singleIcon.isSelected
                         ? "bg-teal-600 text-black"

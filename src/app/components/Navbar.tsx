@@ -1,5 +1,5 @@
-import LanguageSwitcher from "./LanguageSwitcher";
-import ThemeSwitcher from "./ThemeSwitcher";
+import LanguageSwitcher from "../switchers/LanguageSwitcher";
+import ThemeSwitcher from "../switchers/ThemeSwitcher";
 
 import { useTheme } from "../context/ThemeContext";
 

@@ -1,18 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react";
-import AllIcons, { allIconsArray } from "../data/AllIcons";
+import AllIcons from "../data/AllIcons";
 
 import AppsIcon from "@mui/icons-material/Apps"
 import CloseIcon from "@mui/icons-material/Close"
 
 import { useAppContext } from "../context/AppContext";
 import { useLanguageContext } from "../context/LanguageContext";
-import { IconData } from "../types/type";
 
 function IconsWindow() {
     const {t} = useLanguageContext();
-    //const [AllIconsState, setAllIconsState] = useState<IconData[]>(allIconsArray);
+
     const {
         openIconDialogObject: { openIconDialog},
     } = useAppContext();
@@ -29,7 +27,7 @@ function IconsWindow() {
         <Header/>
 
         <span className="mx-8 text-[13px] mt-12 text-black">
-            {`Please select the icons you'd like to use from the collection below:`}
+            {t.iconsDialog.iconsDescription}
         </span>
         {/* All Icons */}
 
@@ -60,7 +58,7 @@ function Header(){
                 </div>
                 {/* Header */}
                 <span className="font-semibold text-lg">
-                    All Icons
+                    {t.iconsDialog.headerName}
                 </span>
             </div>
             <CloseIcon
@@ -86,12 +84,12 @@ function Buttons() {
         onClick={() => setOpenIconDialog(false)}
         className="px-4 py-2 text-black border border-black rounded-md 
         bg-red-200 hover:bg-red-300 hover:border-slate-600 transition-all">
-        Cancel
+        {t.iconsDialog.iconCancelBtn}
       </button>
       <button className="bg-teal-600 hover:bg-teal-700 border border-black 
       hover:border-slate-600
      text-black text-[13px] p-2 px-3 rounded-md transition-all">
-        Save
+        {t.iconsDialog.iconSaveBtn}
       </button>
     </div>
   );
@@ -100,7 +98,7 @@ function Buttons() {
 function IconsArea(){
     return(
         <div className="w-full flex flex-col items-center mt-3">
-            <div className="w-[92%] h-[330px] overflow-auto rounded-md 
+            <div className="w-[90%] h-[320px] overflow-auto rounded-md scrollbar-custom
             border border-slate-100 bg-slate-100">
                 <AllIcons/>
             </div>
