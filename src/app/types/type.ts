@@ -1,5 +1,11 @@
 export type  Language = 'en' | 'hu';
 export type Theme = 'light' | 'dark';
+export type IconData = {
+    id: number;
+    name: string;
+    icon: React.ReactNode;
+    isSelected: boolean;
+}
 
 export type Translations = {
   theme: {

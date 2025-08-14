@@ -13,13 +13,13 @@ import { useTheme } from "../context/ThemeContext";
 export function ExpenseDialog() {
   const { theme } = useTheme();
   const {
-    openExpenseDialogObject: { openExpenseDialog, setOpenExpenseDialog },
+    openExpenseDialogObject: { openExpenseDialog },
   } = useAppContext();
 
   return (
     <div
       className={`${openExpenseDialog ? "block" : "hidden"}
-            w-[48%] max-sm:w-[82%] z-50 p-3 left-1/2 top-[47%] -translate-y-1/2
+            w-[45%] max-sm:w-[80%] z-50 p-3 left-1/2 top-[48%] -translate-y-1/2
             -translate-x-1/2 absolute flex flex-col gap-3 border border-slate-50
             ${theme === "dark" ? "bg-slate-400": "bg-white"} rounded-md shadow-md `}>
       {/* Header */}
@@ -45,7 +45,7 @@ function DialogHeader() {
   const { t } = useLanguageContext();
 
   const {
-    openExpenseDialogObject: { openExpenseDialog, setOpenExpenseDialog },
+    openExpenseDialogObject: { setOpenExpenseDialog },
   } = useAppContext();
 
   return (
@@ -74,6 +74,10 @@ function DialogHeader() {
 
 function ExpenseInput() {
   const { t } = useLanguageContext();
+  const {
+    openIconDialogObject: {setOpenIconDialog},
+} = useAppContext();
+
   return (
     <div className="flex flex-col gap-2">
       <span className="text-[14px] font-medium text-slate-600">
@@ -93,9 +97,10 @@ function ExpenseInput() {
         </div>
         {/* Icon */}
         <div
+        onClick={() => setOpenIconDialog(true)}
           className="w-12 h-10 text-black
                 flex items-center justify-center
-                bg-teal-400 rounded-sm
+                bg-teal-400 rounded-sm cursor-pointer
                 ">
           <ReceiptLongOutlinedIcon sx={{ fontSize: "21px" }} />
         </div>
@@ -170,13 +175,13 @@ function DialogFooter() {
       <button
         onClick={() => setOpenExpenseDialog(false)}
         className="border text-black border-black
-            text-[13px] p-2 px-6 rounded-md bg-red-200 hover:bg-red-300 hover:border-slate-600 transition-all">
+            text-[13px] cursor-pointer p-2 px-6 rounded-md bg-red-200 hover:bg-red-300 hover:border-slate-600 transition-all">
         {t.expenseDialog.cancelBtn}
       </button>
 
       <button
         className="bg-teal-600 hover:bg-teal-700 border border-black hover:border-slate-600
-            text-black text-[13px] p-2 px-3 rounded-md transition-all">
+            text-black cursor-pointer text-[13px] p-2 px-3 rounded-md transition-all">
         {t.expenseDialog.addBtn}
       </button>
     </div>

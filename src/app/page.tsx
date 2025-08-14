@@ -6,6 +6,7 @@ import AllExpenses from "./components/AllExpenses";
 import Navbar from "./components/Navbar";
 
 import { ExpenseDialog } from "./dialogs/ExpenseDialog";
+import IconsWindow from "./dialogs/IconsDialog";
 
 import { useTheme } from "./context/ThemeContext";
 import { useAppContext } from "./context/AppContext";
@@ -29,6 +30,8 @@ function Home() {
         <h1 className="text-red-200 justify-between font-bold uppercase">Work in progress <br/> last update: 8/12/2025 </h1>
       </div>
       <ExpenseDialog/>
+      <IconsWindow/>
+
       {openExpenseDialog &&(
         <div className="w-full h-screen z-40 bg-black fixed opacity-25"></div>
       )}
