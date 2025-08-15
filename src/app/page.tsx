@@ -40,7 +40,7 @@ function Home() {
       </div>
       
       <div className="text-center">
-        <h1 className="text-red-200 justify-between font-bold uppercase">Work in progress <br/> last update: 8/14/2025 7:45 PM </h1>
+        <h1 className="text-red-200 justify-between font-bold uppercase">Work in progress <br/> last update: 8/15/2025 10:00 PM </h1>
       </div>
       <div className={`w-full h-screen flex justify-center items-center bg-gradient-to-b
             ${ theme === "dark" ? "from-gray-700 via-gray-500 to-gray-300" : "from-teal-700 via-teal-500 to-teal-100" }`} >
