@@ -8,7 +8,7 @@ import CloseIcon from "@mui/icons-material/Close"
 import { useAppContext } from "../context/AppContext";
 import { useLanguageContext } from "../context/LanguageContext";
 
-function IconsWindow() {
+export function IconsWindow() {
     const {t} = useLanguageContext();
 
     const {
@@ -38,8 +38,6 @@ function IconsWindow() {
         </div>
     );
 }
-
-export default IconsWindow;
 
 function Header(){
     const {t} = useLanguageContext();

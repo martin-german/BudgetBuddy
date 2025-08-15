@@ -2,8 +2,6 @@
 
 import React , { useRef } from "react";
 
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import ReceiptLongOutlinedIcon from "@mui/icons-material/ReceiptLongOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 
@@ -12,16 +10,16 @@ import { useLanguageContext } from "../context/LanguageContext";
 
 import { useTheme } from "../context/ThemeContext";
 
-export function ExpenseDialog() {
+export function WalletDialog() {
   const { theme } = useTheme();
   const {
-    openExpenseDialogObject: { openExpenseDialog },
+    openWalletDialogObject: { openWalletDialog },
   } = useAppContext();
 
   return (
     <div
-      className={`${openExpenseDialog ? "block" : "hidden"}
-            w-[45%] max-sm:w-[85%] z-50 p-3 left-1/2 top-[50%] -translate-y-1/2
+      className={`${openWalletDialog ? "block" : "hidden"}
+            w-[50%] max-sm:w-[85%] z-50 p-3 left-1/2 top-[60%] -translate-y-1/2
             -translate-x-1/2 absolute flex flex-col gap-3 border border-slate-50
             ${theme === "dark" ? "bg-slate-400": "bg-white"} rounded-md shadow-md `}>
       {/* Header */}
@@ -30,12 +28,7 @@ export function ExpenseDialog() {
       <form className="flex flex-col gap-2 pt-8 px-7 mt-3">
         {/* Expense input */}
         <ExpenseInput />
-        <div className="flex mt-3 gap-3 justify-between">
-          {/* Amount input */}
-          <AmountInput />
-          {/* Wallet */}
-          <WalletSelection />
-        </div>
+
       </form>
       {/* Footer */}
       <DialogFooter />
@@ -47,7 +40,7 @@ function DialogHeader() {
   const { t } = useLanguageContext();
 
   const {
-    openExpenseDialogObject: { setOpenExpenseDialog },
+    openWalletDialogObject: { setOpenWalletDialog },
   } = useAppContext();
 
   return (
@@ -66,7 +59,7 @@ function DialogHeader() {
         </span>
       </div>
       <CloseOutlinedIcon
-        onClick={() => setOpenExpenseDialog(false)}
+        onClick={() => setOpenWalletDialog(false)}
         sx={{ fontSize: "18px" }}
         className="text-slate-900 cursor-pointer"
       />
@@ -77,7 +70,7 @@ function DialogHeader() {
 function ExpenseInput() {
   const { t } = useLanguageContext();
   const {
-    openExpenseDialogObject: {setOpenExpenseDialog},
+    openIconDialogObject: {setOpenIconDialog},
 } = useAppContext();
 
   return (
@@ -99,7 +92,7 @@ function ExpenseInput() {
         </div>
         {/* Icon */}
         <div
-        onClick={() => setOpenExpenseDialog(true)}
+        onClick={() => setOpenIconDialog(true)}
           className="w-12 h-10 text-black
                 flex items-center justify-center
                 bg-teal-400 rounded-sm cursor-pointer
@@ -111,82 +104,13 @@ function ExpenseInput() {
   );
 }
 
-function AmountInput() {
-  const { t } = useLanguageContext();
-  
-  return (
-    <div className="flex gap-2 flex-col mt-2 w-full">
-      <span className="text-[14px] font-medium">
-        {t.expenseDialog.amount}
-      </span>
-      <div className="flex gap-3 items-center">
-        {/* Input */}
-        <div className="w-full">
-          <input
-            placeholder={t.expenseDialog.amountInput} 
-            className={`
-              
-              p-[10px] text-[13px] w-full rounded-md
-              border outline-none`}
-          />
-          <p className="text-[11px] mt-2 text-red-500">
-            {t.expenseDialog.error}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
-function WalletSelection() {
-  const { t } = useLanguageContext();
-  const { theme } = useTheme()
-  const {
-      openWalletDropDownObject: {setOpenWalletDropDown},
-      walletDropDownPositionsObject : {setWalletDropDownPositions}
-     } = useAppContext();
-  
-     // Create walletDropDown ref for the div where dropdown are
-     const walletOptionsRef = React.useRef<HTMLDivElement>(null);
-  
-     //Create function which uses the ref so the dropdown only actives under the reference div
-     function handleClick(){
-      setOpenWalletDropDown(true);
-      const rect = walletOptionsRef.current?.getBoundingClientRect();
-      const {top,left, width} = rect || {top:0,left:0};
-      setWalletDropDownPositions({left: left, top:top + 30, width: width});
-     }
-  return (
-    <div 
-      ref={walletOptionsRef}
-      onClick={handleClick}
-      className="flex gap-2 flex-col mt-2 w-full cursor-pointer">
-      <span className="text-[14px] font-medium ">
-        {t.expenseDialog.walletName}
-      </span>
-      <div
-        className="border p-[9px] rounded-md flex items-center
-            justify-between gap-2">
-        <div className="flex gap-2 items-center">
-          {/* Icon */}
-          <HomeOutlinedIcon
-            className="text-teal-600"
-            sx={{ fontSize: "22px" }}
-          />
-          <span className="text-[13px] mt-[2px]">
-            {t.expenseDialog.selectWallets}
-          </span>
-        </div>
-        <KeyboardArrowDownOutlinedIcon fontSize="small" />
-      </div>
-    </div>
-  );
-}
+
 
 function DialogFooter() {
   const { t } = useLanguageContext();
   const {
-    openExpenseDialogObject: { setOpenExpenseDialog },
+    openWalletDialogObject: { setOpenWalletDialog },
   } = useAppContext();
 
   return (
@@ -195,7 +119,7 @@ function DialogFooter() {
         flex gap-3 justify-end px-7 items-center">
       {/* Cancel btn */}
       <button
-        onClick={() => setOpenExpenseDialog(false)}
+        onClick={() => setOpenWalletDialog(false)}
         className="border text-black border-black
             text-[13px] cursor-pointer p-2 px-6 rounded-md bg-red-200 hover:bg-red-300 hover:border-slate-600 transition-all">
         {t.expenseDialog.cancelBtn}

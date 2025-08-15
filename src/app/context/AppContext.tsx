@@ -16,9 +16,23 @@ interface AppState {
     allIconsArrayObject: {
         allIcons: IconData[];
         setAllIcons: React.Dispatch<React.SetStateAction<IconData[]>>;
+    },
+    openWalletDropDownObject: {
+        openWalletDropDown: boolean;
+        setOpenWalletDropDown: React.Dispatch<React.SetStateAction<boolean>>;
+    },
+    walletDropDownPositionsObject : {
+        walletDropDownPositions: {top:number; left:number; width?: number};
+        setWalletDropDownPositions: React.Dispatch<
+            React.SetStateAction<{ top: number; left: number; width?: number}>
+        >;
+    };
+    openWalletDialogObject: {
+        openWalletDialog:boolean;
+        setOpenWalletDialog: React.Dispatch<React.SetStateAction<boolean>>;
     }
 
-}
+};
 
 // Create a default state
 const defaultState: AppState = {
@@ -33,6 +47,18 @@ const defaultState: AppState = {
     allIconsArrayObject : {
         allIcons: allIconsArray,
         setAllIcons: () => {},
+    },
+    openWalletDropDownObject: {
+        openWalletDropDown:false,
+        setOpenWalletDropDown: () => {},
+    },
+    walletDropDownPositionsObject:{
+        walletDropDownPositions: {top: 0, left: 0},
+        setWalletDropDownPositions: () => {},
+    },
+    openWalletDialogObject: {
+        openWalletDialog: false,
+        setOpenWalletDialog: () => {}
     }
 };
 
@@ -46,12 +72,27 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({
     const [openExpenseDialog, setOpenExpenseDialog] = useState(false);
     const [openIconDialog, setOpenIconDialog] = useState(false);
     const [allIcons, setAllIcons] = useState(allIconsArray);
+
+    const [openWalletDropDown, setOpenWalletDropDown] = useState(false);
+    const [walletDropDownPositions, setWalletDropDownPositions] = useState({
+        top:0,
+        left:0,
+    })
+
+    const [openWalletDialog, setOpenWalletDialog] = useState(false);
+
     return (
         <AppContext.Provider
         value={{
             openExpenseDialogObject: { openExpenseDialog, setOpenExpenseDialog},
             openIconDialogObject: { openIconDialog, setOpenIconDialog},
-            allIconsArrayObject: {allIcons,setAllIcons}
+            allIconsArrayObject: { allIcons,setAllIcons },
+
+            openWalletDropDownObject: { openWalletDropDown,setOpenWalletDropDown },
+
+            walletDropDownPositionsObject: { walletDropDownPositions, setWalletDropDownPositions },
+            
+            openWalletDialogObject: { openWalletDialog, setOpenWalletDialog }
         }}
         > {children}
     </AppContext.Provider>

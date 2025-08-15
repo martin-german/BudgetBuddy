@@ -1,11 +1,12 @@
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import { useLanguageContext } from "../context/LanguageContext";
 
+import { useLanguageContext } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
 function SingleExpense() {
   const { t } = useLanguageContext();
-
+  const {theme} = useTheme();
   return (
     <div
       className="w-full bg-transparent rounded-lg border border-slate-100 shadow-md
@@ -21,16 +22,18 @@ function SingleExpense() {
           </div>
         </div>
         {/*Wallet name*/}
-        <div className="flex flex-col">
-          <span className="font-bold text-black"> {t.singleExpense.expanseName} </span>
+        <div className={`${theme === "dark" ? "text-gray-300" : "text-black"} flex flex-col`}>
+          <span className="font-bold"> {t.singleExpense.expanseName} </span>
           <div className="flex">
-            <span className="text-slate-400 text-[13px] p-[2px]">{t.singleExpense.description}</span>
+            <span className="text-[13px] p-[2px]">{t.singleExpense.description}</span>
           </div>
         </div>
       </div>
       {/*Action buttons */}
-      <div className="flex gap-11 font-bold items-center">
-        <span className="text-[16px] text-black">-99$</span>
+      <div className={`${theme === "dark" ? "text-gray-50" : "text-black"} 
+        flex gap-11 font-bold items-center`}
+        >
+        <span className="text-[16px]">-99$</span>
         <div className="flex gap-2 items-center">
         {/*Edit button */}
         <div className="rounded-lg p-2 flex items-center justify-center cursor-pointer

@@ -6,19 +6,22 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 import { useLanguageContext } from "../context/LanguageContext";
 import { useAppContext } from "../context/AppContext";
-
+import { useTheme } from "../context/ThemeContext";
 
 export function Header() {
+  const {t} = useLanguageContext();
   return (
     <div className="">
       <div className="flex flex-col items-center ">
         {/*Brand name*/}
-        <h1 className="text-4xl font-black text-black pb-4">
+        <h1 className="relative text-4xl font-black text-black pb-4">
           Budget
           <span className="font-thin text-zinc-900">Buddy</span>
         </h1>
+        <q className="absolute p-[45px] italic text-sm">{t.header.slogan}</q>
+
       </div>
-      <div className="flex w-auto justify-between items-center">
+      <div className="flex w-auto justify-between items-center pt-6">
         {/*Logo Section*/}
         <LogoSection />
 
@@ -51,17 +54,20 @@ function LogoSection() {
 
 function SearchBar() {
   const { t } = useLanguageContext();
+  const { theme } = useTheme();
   return (
     <div
-      className="h-12 bg-slate-100 flex items-center text-sm 
-    rounded-md pl-3 gap-2 w-[420px] max-sm:w-[120px]">
+      className={`${theme === "dark" ? "bg-gray-600" : "bg-slate-100 "}
+        h-12  flex items-center text-sm 
+        rounded-md pl-3 gap-2 w-[420px] max-sm:w-[120px]`}>
       <div>
         <SearchOutlinedIcon className="text-black" />
       </div>
       <input
         type="text"
         placeholder={t.header.search}
-        className="bg-transparent max-sm:w-[50px] outline-none w-full font-light"
+        className={`${theme === "dark" ? "placeholder-slate-300" : "placeholder-gray-500"}
+          bg-transparent max-sm:w-[50px] outline-none w-full font-light`}
       />
     </div>
   );

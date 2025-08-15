@@ -15,6 +15,7 @@ export type Translations = {
     light:string;
   };
   header: {
+    slogan: string;
     search: string;
     button: string;
   };
@@ -50,6 +51,11 @@ export type Translations = {
     transactions: string;
     value: string;
   };
+
+  walletDropDownOptions:{
+    addActionBtn:string;
+    itemsName:string;
+  }
 
   footer:{
     allRights: string;

@@ -5,6 +5,7 @@
   },
 
   "header": {
+    "slogan": "The cleaver friend",
     "search": "Search an expense...",
     "button": "New Expense"
   },
@@ -43,6 +44,11 @@
   "singleExpense": {
     "expanseName": "Expense Name",
     "description": "Wallet"
+  },
+
+  "walletDropDownOptions": {
+    "addActionBtn" : "Add",
+    "itemsName": "Grocery"
   },
 
   "footer":{

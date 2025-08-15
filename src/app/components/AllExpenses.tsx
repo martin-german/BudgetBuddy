@@ -1,7 +1,7 @@
 import SingleExpense from "./SingleExpense";
 import { useLanguageContext } from "../context/LanguageContext";
 
-function AllExpenses() {
+export function AllExpenses() {
   return (
     <div className="mt-16">
       {/*List Header & Expenses List*/}
@@ -43,4 +43,4 @@ function ExpensesList() {
   );
 }
 
-export default AllExpenses;
+//export default AllExpenses;

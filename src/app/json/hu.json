@@ -5,12 +5,13 @@
   },
 
   "header": {
+    "slogan": "Az okos barát",
     "search": "Kiadás keresése...",
     "button": "Új kiadás"
   },
 
   "subheader": {
-    "walletOptions": "Otthoni tárca",
+    "walletOptions": "Otthon tárca",
     "clearBtn": "Összes törlés"
   },
 
@@ -22,7 +23,7 @@
     "amount": "Összeg",
     "amountInput": "Add meg az összeget...",
     "walletName": "Pénztárca",
-    "selectWallets": "Otthoni tárca",
+    "selectWallets": "Otthon tárca",
     "cancelBtn": "Bezárás",
     "addBtn": "Hozzáadás"
   },
@@ -44,7 +45,11 @@
     "expanseName": "Költség megnevezése",
     "description": "Tárca"
   },
-    "footer":{
+  "walletDropDownOptions": {
+    "addActionBtn" : "Hozzáadás",
+    "itemsName": "Élelmiszerek"
+  },
+  "footer":{
     "allRights": "Minden jog fenntartva"
   }
 }

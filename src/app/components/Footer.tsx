@@ -12,11 +12,11 @@ const Footer = () => {
   return (
 
 <footer
-  className={`w-full pb-12 
+  className={`w-full p-12
     ${ theme === "dark" ? "bg-gray-300" : "bg-teal-100" }`}
 >      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="text-sm  mb-4 md:mb-0 md:flex-1 text-center text-black font-semibold">
-          © {t.footer.allRights} {getCurrentDate()} • Martin Germán{" "}
+          © {t.footer.allRights} {getCurrentDate()} • Martin Germán
         </div>
         <div>
           <a
